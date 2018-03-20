@@ -1,0 +1,28 @@
+const byte LEDs[] = {8,9,10,11,12,13,14,15};
+const byte total = sizeof(LEDs);
+byte index = 0;
+void setup()
+{
+for (byte i=0;i<total;i++) {
+pinMode(LEDs[i], OUTPUT);
+}
+}
+void loop() 
+{
+for (byte i=0;i<total;i++) 
+{
+digitalWrite(LEDs[i], LOW);
+}
+for (index=0;index<total;index++)
+{
+digitalWrite(LEDs[index], HIGH);
+delay(300);
+digitalWrite(LEDs[index], LOW);
+}
+for (index=total-1;index>0;index--)
+{
+digitalWrite(LEDs[index], HIGH);
+delay(300);
+digitalWrite(LEDs[index], LOW);
+}
+}
